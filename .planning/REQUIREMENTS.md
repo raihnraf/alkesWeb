@@ -12,7 +12,7 @@
 - [ ] **BLD-03**: Multi-page routing configured via Vite `rolldownOptions.input` for 7 HTML entry points
 - [ ] **BLD-04**: Vercel deployment verified with `cleanUrls: true` in `vercel.json`
 - [x] **BLD-05**: Shared navigation component with consistent links across all pages and active state indicator
-- [ ] **BLD-06**: Shared footer component with contact info, product links, legal links, and newsletter input
+- [x] **BLD-06**: Shared footer component with contact info, product links, legal links, and newsletter input
 - [x] **BLD-07**: Mobile hamburger menu with smooth open/close animation
 - [ ] **BLD-08**: Local product images moved to `public/images/` and pre-optimized (WebP with fallbacks, explicit dimensions)
 
@@ -101,7 +101,7 @@
 | BLD-03 | Phase 1 | Pending |
 | BLD-04 | Phase 1 | Pending |
 | BLD-05 | Phase 2 | Complete |
-| BLD-06 | Phase 2 | Pending |
+| BLD-06 | Phase 2 | Complete |
 | BLD-07 | Phase 2 | Complete |
 | BLD-08 | Phase 1 | Pending |
 | HOME-01 | Phase 3 | Pending |
