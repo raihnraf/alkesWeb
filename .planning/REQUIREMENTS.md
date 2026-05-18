@@ -48,11 +48,11 @@
 
 ### Contact Page
 
-- [ ] **CONT-01**: Contact form with fields: name, institution, email, phone, product interest, message (display-only, no backend)
-- [ ] **CONT-02**: WhatsApp contact with deep link to wa.me
-- [ ] **CONT-03**: Email address (info@apbagroup.com) displayed as clickable link
-- [ ] **CONT-04**: Phone number (0811 1212 9779) displayed as clickable link
-- [ ] **CONT-05**: Office address (Jakarta, Indonesia)
+- [x] **CONT-01**: Contact form with fields: name, institution, email, phone, product interest, message (display-only, no backend)
+- [x] **CONT-02**: WhatsApp contact with deep link to wa.me
+- [x] **CONT-03**: Email address (info@apbagroup.com) displayed as clickable link
+- [x] **CONT-04**: Phone number (0811 1212 9779) displayed as clickable link
+- [x] **CONT-05**: Office address (Jakarta, Indonesia)
 - [ ] **CONT-06**: Floating WhatsApp action button (fixed position, bottom-right, visible on all pages)
 
 ### Cross-Cutting
@@ -125,11 +125,11 @@
 | ABOT-03 | Phase 5 | Pending |
 | ABOT-04 | Phase 5 | Pending |
 | ABOT-05 | Phase 5 | Pending |
-| CONT-01 | Phase 5 | Pending |
-| CONT-02 | Phase 5 | Pending |
-| CONT-03 | Phase 5 | Pending |
-| CONT-04 | Phase 5 | Pending |
-| CONT-05 | Phase 5 | Pending |
+| CONT-01 | Phase 5 | Complete |
+| CONT-02 | Phase 5 | Complete |
+| CONT-03 | Phase 5 | Complete |
+| CONT-04 | Phase 5 | Complete |
+| CONT-05 | Phase 5 | Complete |
 | CONT-06 | Phase 5 | Pending |
 | XCT-01 | Phase 6 | Pending |
 | XCT-02 | Phase 2 | Complete |
