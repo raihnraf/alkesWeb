@@ -102,7 +102,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Contact page displays a form (name, institution, email, phone, product interest, message), WhatsApp deep link, clickable email, clickable phone number, and office address
   4. Floating WhatsApp action button is visible at bottom-right on all pages and opens wa.me when clicked
 **UI hint**: yes
-**Plans**: TBD
+**Plans**: 3 plans
+
+**Plan List:**
+- [ ] [05-01-PLAN.md](.planning/phases/05-about-contact-pages/05-01-PLAN.md) — Build About page with 5 sections (hero, history with stats, mission/values cards, certifications, subsidiaries glass cards)
+- [ ] [05-02-PLAN.md](.planning/phases/05-about-contact-pages/05-02-PLAN.md) — Build Contact page with 3 sections (hero, form + info panel with validation, CTA banner)
+- [ ] [05-03-PLAN.md](.planning/phases/05-about-contact-pages/05-03-PLAN.md) — Add floating WhatsApp button to all 7 pages with pulse animation
 
 ### Phase 6: Polish & Launch
 **Goal**: The entire site is responsive, accessible, SEO-optimized, and ready for public launch
