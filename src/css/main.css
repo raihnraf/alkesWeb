@@ -112,6 +112,29 @@
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
+  .page-enter {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+  html {
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Page fade-in animation */
+@keyframes pageFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.page-enter {
+  opacity: 0;
+  animation: pageFadeIn 300ms ease-out forwards;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
 }
 
 /* Product page — accent bar */
