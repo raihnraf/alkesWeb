@@ -174,3 +174,51 @@
 @media (prefers-reduced-motion: reduce) {
   .form-success { animation: none; }
 }
+
+/* Floating WhatsApp button */
+.wa-float-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 50;
+  width: 56px;
+  height: 56px;
+  border-radius: 9999px;
+  background-color: var(--color-medical-teal);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+.wa-float-btn:hover {
+  background-color: white;
+  color: var(--color-medical-teal);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+.wa-float-btn .material-symbols-outlined {
+  font-size: 28px;
+}
+@media (max-width: 767px) {
+  .wa-float-btn {
+    width: 48px;
+    height: 48px;
+    bottom: 16px;
+    right: 16px;
+  }
+  .wa-float-btn .material-symbols-outlined {
+    font-size: 24px;
+  }
+}
+
+/* Floating WhatsApp button pulse animation */
+@keyframes wa-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 163, 173, 0.4); }
+  70% { box-shadow: 0 0 0 12px rgba(0, 163, 173, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 163, 173, 0); }
+}
+.wa-float-btn { animation: wa-pulse 2s ease-out 1; }
+@media (prefers-reduced-motion: reduce) {
+  .wa-float-btn { animation: none; }
+}
