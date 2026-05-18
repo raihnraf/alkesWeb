@@ -51,14 +51,16 @@ Declared values from `src/css/main.css` `@theme` block (lines 58-66). All multip
 
 ## Typography
 
-Font families from `src/css/main.css` `@theme` block. Weights limited to 2 per the design contract rule.
+Font families from `src/css/main.css` `@theme` block. Weights limited to 3 per the design contract rule.
 
 | Role | Size | Weight | Line Height | Font Family | Usage in this phase |
 |------|------|--------|-------------|-------------|---------------------|
-| Nav link (label) | 14px | 600 (semibold) | 1.2 | Inter (`--font-label-md`) | Desktop nav items, mobile menu items, footer section headings |
-| Logo text | 24px | 700 (bold) | 1.3 | Plus Jakarta Sans (`--font-headline-md`) | Header brand "APBA Group" |
+| Logo text | 24px | 700 (bold) | 1.3 | Plus Jakarta Sans (`--font-headline-md`) | Header brand "APBA Group", footer brand |
+| Nav link (label) | 14px | 600 (semibold) | 1.2 | Inter (`--font-label-md`) | Desktop nav items, mobile menu items, footer section headings, CTA button |
 | Body | 16px | 400 (regular) | 1.5 | Inter (`--font-body-md`) | Footer body text, contact details, legal links |
 | Caption | 12px | 400 (regular) | 1.4 | Inter (`--font-caption`) | Footer copyright line |
+
+**Weight summary:** 400 (body, caption), 600 (nav links, CTA, footer headings), 700 (logo, active state indicators). No other weights used.
 
 **Font loading strategy:** Single `<link>` in `<head>` of every page:
 ```html
@@ -129,6 +131,8 @@ All copy in Indonesian (Bahasa Indonesia) per project constraints.
 - Address: `Jakarta, Indonesia (Kantor Pusat)`
 - Phone/WA: `0811 1212 9779` (tel: link)
 - Email: `info@apbagroup.com` (mailto: link)
+- Instagram: `@alkes_house` (link to `https://instagram.com/alkes_house`)
+- Website: `apbagroup.com` (link to `https://apbagroup.com`)
 
 **Source:** DESIGN.MD lines 193-506 (nav/footer copy), PROJECT.md language constraint
 
@@ -149,6 +153,8 @@ No shadcn, no third-party registries. This phase uses vanilla HTML + Tailwind CS
 ### Layout Structure
 
 ```
+<a href="#main-content" class="skip-link">Langsung ke konten utama</a>
+  ↑ Positioned above <header>, visually hidden until :focus-visible
 <header> (fixed, top: 0, z-50, full-width)
   └── <nav> container
         ├── Logo (left) — "APBA Group" text link → home page
@@ -159,7 +165,20 @@ No shadcn, no third-party registries. This phase uses vanilla HTML + Tailwind CS
         │     └── Kontak → /contact
         ├── CTA Button (right, desktop only) — "Minta Penawaran" → /contact
         └── Hamburger Button (right, mobile only) — toggles mobile menu
+<main id="main-content">  ← skip link target
 ```
+
+### Skip Link
+
+| Property | Value |
+|----------|-------|
+| Position | Above `<header>`, `absolute`, `top-0`, `left-0`, `z-[60]` (above header z-50) |
+| Default state | Visually hidden: `sr-only` (clip, 1px, absolute overflow-hidden) |
+| Focus-visible state | Visible: `sr-only` removed, `block`, `bg-deep-blue`, `text-white`, `font-label-md`, `px-6 py-3`, `text-center`, `w-full` |
+| Transition | `transition-all duration-200` on focus/blur |
+| Target | `#main-content` — the `<main>` element on every page |
+| Tab order | First focusable element on the page (before logo) |
+| Label | `Langsung ke konten utama` (Indonesian for "Skip to main content") |
 
 ### Desktop Header (≥768px)
 
@@ -210,6 +229,8 @@ No shadcn, no third-party registries. This phase uses vanilla HTML + Tailwind CS
 | Hover | `hover:bg-medical-teal` with `transition-colors duration-200` |
 | Visibility | `hidden md:inline-flex` (desktop only) |
 
+**Primary visual focal point:** The CTA button "Minta Penawaran" is the highest-contrast, action-driving element in the header. It uses `bg-deep-blue` on a light `bg-surface/90` background, making it the dominant visual anchor. All other header elements are secondary (text links with subtle hover states).
+
 ### Hamburger Button (Mobile Only)
 
 | Property | Value |
@@ -244,11 +265,14 @@ No shadcn, no third-party registries. This phase uses vanilla HTML + Tailwind CS
 
 | Property | Value |
 |----------|-------|
-| Method | CSS `max-height` transition + `opacity` fade |
-| Closed state | `max-height: 0`, `opacity: 0`, `overflow: hidden` |
-| Open state | `max-height: calc(100vh - 80px)`, `opacity: 1` |
-| Transition | `transition-all duration-300 ease-in-out` |
+| Method | CSS `grid-template-rows` transition + `opacity` fade (preferred over `max-height` anti-pattern) |
+| Closed state | `grid-template-rows: 0fr`, `opacity: 0` |
+| Open state | `grid-template-rows: 1fr`, `opacity: 1` |
+| Inner wrapper | `overflow: hidden` on a child `<div>` inside the grid container |
+| Transition | `grid-template-rows 300ms ease-in-out`, `opacity 300ms ease-in-out` |
 | JavaScript | Toggle `.open` class on `#mobile-menu`; update `aria-expanded` on hamburger button |
+
+**Why not `max-height`:** `max-height` transitions are a CSS anti-pattern because they require guessing a maximum value, cause uneven easing (animation completes before max-height is reached if content is shorter), and break with dynamic content. `grid-template-rows: 0fr → 1fr` animates to the exact content height with proper easing. Fallback: if grid animation is not supported, use `transform: translateY(-8px)` + `opacity` with `pointer-events: none` when closed.
 
 ### Mobile Menu Items
 
@@ -386,11 +410,13 @@ navLinks.forEach(link => {
 | Property | Value |
 |----------|-------|
 | Heading | `Hubungi Kami` — `font-label-md` (14px, 600), `text-white`, `uppercase`, `tracking-wider` |
-| Items | Vertical list, `gap-3` |
+| Items | Vertical list, `gap-3` — 5 items: Address, Phone/WA, Email, Instagram, Website |
 | Item layout | `flex items-start gap-2` |
 | Icon size | 20px (`text-[20px]`), `text-medical-teal` |
 | Link color | `text-surface-variant/80`, hover `text-white` |
 | Link transition | `transition-colors duration-200` |
+| Instagram icon | Material Symbols `photo_camera` or `smartphone` (20px) |
+| Website icon | Material Symbols `language` (20px) |
 
 ### Column 3: Produk
 
@@ -439,8 +465,8 @@ navLinks.forEach(link => {
 
 | Animation | Trigger | Properties | Duration | Easing |
 |-----------|---------|------------|----------|--------|
-| Mobile menu open | Hamburger click (closed → open) | `max-height: 0 → calc(100vh - 80px)`, `opacity: 0 → 1` | 300ms | `ease-in-out` |
-| Mobile menu close | Hamburger click (open → closed) / Escape / link click | `max-height: calc(100vh - 80px) → 0`, `opacity: 1 → 0` | 300ms | `ease-in-out` |
+| Mobile menu open | Hamburger click (closed → open) | `grid-template-rows: 0fr → 1fr`, `opacity: 0 → 1` | 300ms | `ease-in-out` |
+| Mobile menu close | Hamburger click (open → closed) / Escape / link click | `grid-template-rows: 1fr → 0fr`, `opacity: 1 → 0` | 300ms | `ease-in-out` |
 | Nav link hover | Mouse enter | `color: --color-on-surface → --color-medical-teal` | 200ms | `ease` |
 | CTA button hover | Mouse enter | `background: --color-deep-blue → --color-medical-teal` | 200ms | `ease` |
 | Footer link hover | Mouse enter | `color: --color-surface-variant/80 → --color-white` | 200ms | `ease` |
