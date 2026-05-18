@@ -120,7 +120,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Every page has unique SEO meta tags (title, description, Open Graph) and all images have alt text
   4. Production deployment on Vercel passes a final review of all pages and routes
 **UI hint**: yes
-**Plans**: TBD
+**Plans**: 3 plans
+
+**Plan List:**
+- [ ] [06-01-PLAN.md](.planning/phases/06-polish-launch/06-01-PLAN.md) — Add page transition CSS, smooth scroll, and reduced-motion overrides to shared stylesheet
+- [ ] [06-02-PLAN.md](.planning/phases/06-polish-launch/06-02-PLAN.md) — Add SEO meta tags (canonical, Open Graph, Twitter Card) to all 7 HTML pages
+- [ ] [06-03-PLAN.md](.planning/phases/06-polish-launch/06-03-PLAN.md) — Wire .page-enter class on all pages, add aria-hidden to icons, verify image alt text
 
 ## Progress
 
@@ -133,5 +138,5 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 | 2. Shared Layout & Navigation | 0/? | Not started | - |
 | 3. Home Page | 0/? | Not started | - |
 | 4. Product Detail Pages | 0/? | Not started | - |
-| 5. About & Contact Pages | 2/3 | In Progress|  |
-| 6. Polish & Launch | 0/? | Not started | - |
+| 5. About & Contact Pages | 3/3 | ✓ Complete |  |
+| 6. Polish & Launch | 0/3 | Not started | - |
