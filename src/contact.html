@@ -183,17 +183,47 @@
             field.classList.add('error');
             const err = document.createElement('p');
             err.className = 'form-error';
-            err.textContent = 'Mohon isi bidang ini dengan benar.';
+            err.textContent = 'Mohon isi bidang ini.';
             field.parentElement.appendChild(err);
+          } else if (field.type === 'email') {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(field.value.trim())) {
+              valid = false;
+              field.classList.add('error');
+              const err = document.createElement('p');
+              err.className = 'form-error';
+              err.textContent = 'Format email tidak valid.';
+              field.parentElement.appendChild(err);
+            }
+          } else if (field.type === 'tel') {
+            const phoneRegex = /^[\d\s\-\+\(\)]{8,}$/;
+            if (!phoneRegex.test(field.value.trim())) {
+              valid = false;
+              field.classList.add('error');
+              const err = document.createElement('p');
+              err.className = 'form-error';
+              err.textContent = 'Format nomor telepon tidak valid.';
+              field.parentElement.appendChild(err);
+            }
           }
         });
         if (valid) {
-          const toast = document.createElement('div');
-          toast.className = 'form-success';
-          toast.textContent = 'Pesan Anda telah tercatat. Tim kami akan menghubungi Anda segera.';
-          document.body.appendChild(toast);
-          setTimeout(() => toast.remove(), 4000);
-          this.reset();
+          const btn = this.querySelector('button[type="submit"]');
+          const btnText = btn.querySelector('span:last-child');
+          btn.disabled = true;
+          btn.classList.add('opacity-75', 'cursor-not-allowed');
+          if (btnText) btnText.textContent = 'Mengirim...';
+          setTimeout(() => {
+            const toast = document.createElement('div');
+            toast.className = 'form-success';
+            toast.textContent = 'Pesan Anda telah tercatat. Tim kami akan menghubungi Anda segera.';
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 4000);
+            this.reset();
+            btn.disabled = false;
+            btn.classList.remove('opacity-75', 'cursor-not-allowed');
+            if (btnText) btnText.textContent = 'Kirim Pesan';
+          }, 1000);
         }
       });
     </script>
