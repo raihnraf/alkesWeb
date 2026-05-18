@@ -12,7 +12,7 @@ Build a multi-page corporate website for PT Abadi Perkasa Bersama Alkesindo (APB
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Build Foundation** - Vite + Tailwind v4 scaffold, design tokens, routing, deployment, image optimization
+- [x] **Phase 1: Build Foundation** - Vite + Tailwind v4 scaffold, design tokens, routing, deployment, image optimization
 - [ ] **Phase 2: Shared Layout & Navigation** - Header, footer, mobile menu, consistent cross-page navigation
 - [ ] **Phase 3: Home Page** - Hero, about summary, product grid, why-us, subsidiaries, stats, smooth scroll
 - [ ] **Phase 4: Product Detail Pages** - 4 product pages with specs, images, inquiry CTAs, related products
@@ -31,11 +31,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. All 7 page routes return 200 on Vercel (including direct URL access like /products/blue-diode-laser)
   3. Design tokens (deep blue #003366, medical teal #00A3AD, typography, spacing) render correctly via Tailwind v4 `@theme` on a test page
   4. Product images exist in `public/images/` as WebP with PNG fallbacks and explicit width/height attributes
-**Plans**: 2 plans
+**Plans**: 3 plans
 
 **Plan List:**
-- [ ] [01-01-PLAN.md](.planning/phases/01-build-foundation/01-01-PLAN.md) — Initialize Vite + Tailwind v4 build pipeline with 7-page multi-page configuration and Vercel deployment
-- [ ] [01-02-PLAN.md](.planning/phases/01-build-foundation/01-02-PLAN.md) — Migrate design tokens to Tailwind v4 @theme directive and set up product images
+- [x] [01-01-PLAN.md](.planning/phases/01-build-foundation/01-01-PLAN.md) — Initialize Vite + Tailwind v4 build pipeline with 7-page multi-page configuration, Vercel deployment, and complete Wave 0 test infrastructure (all 5 test files)
+- [x] [01-02-PLAN.md](.planning/phases/01-build-foundation/01-02-PLAN.md) — Migrate design tokens to Tailwind v4 @theme directive and create verification tests
+- [x] [01-03-PLAN.md](.planning/phases/01-build-foundation/01-03-PLAN.md) — Implement image optimization with WebP conversion and PNG fallbacks
 
 ### Phase 2: Shared Layout & Navigation
 **Goal**: Visitors see consistent, functional navigation and footer on every page with working mobile menu
@@ -110,7 +111,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Build Foundation | 0/2 | Planning complete | - |
+| 1. Build Foundation | 3/3 | ✓ Complete | 2026-05-18 |
 | 2. Shared Layout & Navigation | 0/? | Not started | - |
 | 3. Home Page | 0/? | Not started | - |
 | 4. Product Detail Pages | 0/? | Not started | - |
