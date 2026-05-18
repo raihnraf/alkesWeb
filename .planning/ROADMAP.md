@@ -31,7 +31,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. All 7 page routes return 200 on Vercel (including direct URL access like /products/blue-diode-laser)
   3. Design tokens (deep blue #003366, medical teal #00A3AD, typography, spacing) render correctly via Tailwind v4 `@theme` on a test page
   4. Product images exist in `public/images/` as WebP with PNG fallbacks and explicit width/height attributes
-**Plans**: TBD
+**Plans**: 2 plans
+
+**Plan List:**
+- [ ] [01-01-PLAN.md](.planning/phases/01-build-foundation/01-01-PLAN.md) — Initialize Vite + Tailwind v4 build pipeline with 7-page multi-page configuration and Vercel deployment
+- [ ] [01-02-PLAN.md](.planning/phases/01-build-foundation/01-02-PLAN.md) — Migrate design tokens to Tailwind v4 @theme directive and set up product images
 
 ### Phase 2: Shared Layout & Navigation
 **Goal**: Visitors see consistent, functional navigation and footer on every page with working mobile menu
@@ -57,6 +61,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   4. Stats animate (count up) when scrolled into view and display founding year and hospital count
   5. Navigation links smoothly scroll to their corresponding home page sections
 **UI hint**: yes
+**Plans**: TBD
 
 ### Phase 4: Product Detail Pages
 **Goal**: Visitors can view complete product information with specs, clinical applications, and reach out to inquire via WhatsApp or email
@@ -70,6 +75,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   4. WhatsApp inquiry button opens wa.me with a pre-filled message including the product name, and an email inquiry CTA appears alongside it
   5. Related products links at the bottom of each page navigate to the other product detail pages
 **UI hint**: yes
+**Plans**: TBD
 
 ### Phase 5: About & Contact Pages
 **Goal**: Visitors can learn about APBA Group's history and credibility, and reach the company through multiple contact channels
@@ -82,6 +88,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Contact page displays a form (name, institution, email, phone, product interest, message), WhatsApp deep link, clickable email, clickable phone number, and office address
   4. Floating WhatsApp action button is visible at bottom-right on all pages and opens wa.me when clicked
 **UI hint**: yes
+**Plans**: TBD
 
 ### Phase 6: Polish & Launch
 **Goal**: The entire site is responsive, accessible, SEO-optimized, and ready for public launch
@@ -94,6 +101,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Every page has unique SEO meta tags (title, description, Open Graph) and all images have alt text
   4. Production deployment on Vercel passes a final review of all pages and routes
 **UI hint**: yes
+**Plans**: TBD
 
 ## Progress
 
@@ -102,7 +110,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Build Foundation | 0/? | Not started | - |
+| 1. Build Foundation | 0/2 | Planning complete | - |
 | 2. Shared Layout & Navigation | 0/? | Not started | - |
 | 3. Home Page | 0/? | Not started | - |
 | 4. Product Detail Pages | 0/? | Not started | - |
