@@ -61,7 +61,7 @@
 - [x] **XCT-02**: Consistent page-to-page navigation experience
 - [x] **XCT-03**: Page transition effects between routes
 - [x] **XCT-04**: SEO meta tags (title, description, Open Graph) on all pages
-- [ ] **XCT-05**: Image alt text for accessibility on all images
+- [x] **XCT-05**: Image alt text for accessibility on all images
 
 ## v2 Requirements
 
@@ -135,7 +135,7 @@
 | XCT-02 | Phase 2 | Complete |
 | XCT-03 | Phase 6 | Complete |
 | XCT-04 | Phase 6 | Complete |
-| XCT-05 | Phase 6 | Pending |
+| XCT-05 | Phase 6 | Complete |
 
 **Coverage:**
 - v1 requirements: 36 total
