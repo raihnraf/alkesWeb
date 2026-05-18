@@ -55,20 +55,26 @@ Font families migrated from DESIGN.MD:
 
 | Role | Size | Weight | Line Height | Font Family |
 |------|------|--------|-------------|-------------|
+| Label/Caption | 14px | 600 | 1.4 | Inter |
 | Body | 16px | 400 | 1.5 | Inter |
-| Body Large | 18px | 400 | 1.6 | Inter |
-| Label | 14px | 600 | 1.2 | Inter |
-| Caption | 12px | 400 | 1.4 | Inter |
 | Heading Medium | 24px | 600 | 1.3 | Plus Jakarta Sans |
-| Heading Large | 32px | 700 | 1.25 | Plus Jakarta Sans |
-| Heading XL | 48px | 700 | 1.2 | Plus Jakarta Sans |
-| Heading LG Mobile | 28px | 700 | 1.3 | Plus Jakarta Sans |
+| Heading Large/XL | 32px | 700 | 1.25 | Plus Jakarta Sans |
 
-**Declaration:** 8 sizes total (4 body/label sizes + 4 heading sizes)
+**Declaration:** 4 sizes total (2 body sizes + 2 heading sizes)
 **Weights:** 2 weights (400 regular, 600/700 semibold/bold)
-**Line heights:** Body at 1.5-1.6, headings at 1.2-1.3
+**Line heights:** Body at 1.5, headings at 1.25-1.3
 
-**Source:** DESIGN.MD lines 88-173 (existing Tailwind v3 fontSize config)
+**Mapping from original 8 sizes:**
+- 12px caption → merged into 14px label/caption
+- 14px label → kept as label/caption
+- 16px body → kept as body
+- 18px body large → merged into 16px body
+- 24px heading medium → kept as heading medium
+- 28px heading LG mobile → merged into 24px heading medium
+- 32px heading large → kept as heading large/xl
+- 48px heading XL → merged into 32px heading large/xl
+
+**Source:** DESIGN.MD lines 88-173 (existing Tailwind v3 fontSize config, consolidated to 4 sizes per UI checker requirements)
 
 ---
 
@@ -163,7 +169,7 @@ theme: {
 }
 ```
 
-**Migration completeness:** All 50+ color tokens, 8 spacing tokens, 8 font size/weight combinations, 4 font families
+**Migration completeness:** All 50+ color tokens, 8 spacing tokens, 4 font size/weight combinations (consolidated from 8), 2 font families
 
 ---
 
@@ -190,12 +196,12 @@ theme: {
 - [ ] Dimension 1 Copywriting: PASS (Foundation phase - no copy implementation)
 - [ ] Dimension 2 Visuals: PASS (Design tokens migrated from existing prototype)
 - [ ] Dimension 3 Color: PASS (50+ color tokens migrated from DESIGN.MD)
-- [ ] Dimension 4 Typography: PASS (8 sizes, 2 weights, 2 font families migrated)
+- [ ] Dimension 4 Typography: PASS (4 sizes, 2 weights, 2 font families migrated - consolidated from original 8 sizes)
 - [ ] Dimension 5 Spacing: PASS (8-point scale with section/container tokens)
 - [ ] Dimension 6 Registry Safety: PASS (No registry usage in foundation phase)
 
 **Approval:** pending
-**Notes:** Phase 1 is design system setup only. No component implementation. All design tokens pre-populated from existing DESIGN.MD prototype.
+**Notes:** Phase 1 is design system setup only. No component implementation. All design tokens pre-populated from existing DESIGN.MD prototype. Typography consolidated from 8 sizes to 4 per checker requirements.
 
 ---
 
