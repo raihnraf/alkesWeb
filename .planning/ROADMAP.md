@@ -67,7 +67,10 @@ Decimal phases appear between their surrounding integers in numeric order.
   4. Stats animate (count up) when scrolled into view and display founding year and hospital count
   5. Navigation links smoothly scroll to their corresponding home page sections
 **UI hint**: yes
-**Plans**: TBD
+**Plans**: 1 plan
+
+**Plan List:**
+- [ ] [03-01-PLAN.md](.planning/phases/03-home-page/03-01-PLAN.md) — Build home page with hero, about summary, product bento grid, why-us, subsidiaries, stats, smooth scroll, and animated counters
 
 ### Phase 4: Product Detail Pages
 **Goal**: Visitors can view complete product information with specs, clinical applications, and reach out to inquire via WhatsApp or email
