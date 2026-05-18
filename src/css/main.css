@@ -81,3 +81,35 @@
   --font-body-lg: "Inter", sans-serif;
   --font-caption: "Inter", sans-serif;
 }
+
+/* Skip link */
+.skip-link {
+  @apply sr-only;
+}
+.skip-link:focus-visible {
+  @apply not-sr-only block bg-deep-blue text-white font-label-md px-6 py-3 text-center w-full absolute top-0 left-0 z-[60] transition-all duration-200;
+}
+
+/* Active nav link state */
+.nav-link.active {
+  @apply text-medical-teal font-bold border-b-2 border-medical-teal pb-1;
+}
+
+/* Mobile menu open state */
+#mobile-menu.open {
+  grid-template-rows: 1fr !important;
+  opacity: 1 !important;
+}
+
+/* Mobile menu item active state */
+.mobile-menu-item.active {
+  @apply text-medical-teal font-bold bg-medical-teal/5 border-l-4 border-medical-teal;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
