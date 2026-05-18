@@ -84,7 +84,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   4. WhatsApp inquiry button opens wa.me with a pre-filled message including the product name, and an email inquiry CTA appears alongside it
   5. Related products links at the bottom of each page navigate to the other product detail pages
 **UI hint**: yes
-**Plans**: TBD
+**Plans**: 3 plans
+
+**Plan List:**
+- [ ] [04-01-PLAN.md](.planning/phases/04-product-detail-pages/04-01-PLAN.md) — Build Blue Diode Laser page as reference template with all 6 sections (hero, specs, applications, banner, CTAs, related)
+- [ ] [04-02-PLAN.md](.planning/phases/04-product-detail-pages/04-02-PLAN.md) — Replicate template to Ultrasonic Surgery, Laser Holmium, and Consumable Urologi pages with product-specific content
+- [ ] [04-03-PLAN.md](.planning/phases/04-product-detail-pages/04-03-PLAN.md) — Create automated tests for product page content, CTAs, and related products verification
 
 ### Phase 5: About & Contact Pages
 **Goal**: Visitors can learn about APBA Group's history and credibility, and reach the company through multiple contact channels
