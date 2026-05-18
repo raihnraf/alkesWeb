@@ -1,9 +1,21 @@
 import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 import { resolve } from 'path'
 
 export default defineConfig({
-  plugins: [tailwindcss()],
+  plugins: [
+    tailwindcss(),
+    ViteImageOptimizer({
+      png: {
+        quality: 80,
+        compressionLevel: 9,
+      },
+      webp: {
+        quality: 80,
+      },
+    }),
+  ],
   build: {
     rollupOptions: {
       input: {
