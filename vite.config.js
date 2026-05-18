@@ -19,7 +19,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        home: resolve(__dirname, 'src/home.html'),
+        index: resolve(__dirname, 'index.html'),
         'blue-diode-laser': resolve(__dirname, 'src/products/blue-diode-laser.html'),
         'ultrasonic-surgery': resolve(__dirname, 'src/products/ultrasonic-surgery.html'),
         'holmium-laser': resolve(__dirname, 'src/products/holmium-laser.html'),
