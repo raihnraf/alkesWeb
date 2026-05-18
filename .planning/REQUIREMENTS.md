@@ -11,9 +11,9 @@
 - [ ] **BLD-02**: Design tokens (colors, typography, spacing) migrated from DESIGN.MD Tailwind v3 JS config to v4 CSS `@theme` directive
 - [ ] **BLD-03**: Multi-page routing configured via Vite `rolldownOptions.input` for 7 HTML entry points
 - [ ] **BLD-04**: Vercel deployment verified with `cleanUrls: true` in `vercel.json`
-- [ ] **BLD-05**: Shared navigation component with consistent links across all pages and active state indicator
+- [x] **BLD-05**: Shared navigation component with consistent links across all pages and active state indicator
 - [ ] **BLD-06**: Shared footer component with contact info, product links, legal links, and newsletter input
-- [ ] **BLD-07**: Mobile hamburger menu with smooth open/close animation
+- [x] **BLD-07**: Mobile hamburger menu with smooth open/close animation
 - [ ] **BLD-08**: Local product images moved to `public/images/` and pre-optimized (WebP with fallbacks, explicit dimensions)
 
 ### Home Page
@@ -58,7 +58,7 @@
 ### Cross-Cutting
 
 - [ ] **XCT-01**: Responsive design (mobile-first) for all pages
-- [ ] **XCT-02**: Consistent page-to-page navigation experience
+- [x] **XCT-02**: Consistent page-to-page navigation experience
 - [ ] **XCT-03**: Page transition effects between routes
 - [ ] **XCT-04**: SEO meta tags (title, description, Open Graph) on all pages
 - [ ] **XCT-05**: Image alt text for accessibility on all images
@@ -100,9 +100,9 @@
 | BLD-02 | Phase 1 | Pending |
 | BLD-03 | Phase 1 | Pending |
 | BLD-04 | Phase 1 | Pending |
-| BLD-05 | Phase 2 | Pending |
+| BLD-05 | Phase 2 | Complete |
 | BLD-06 | Phase 2 | Pending |
-| BLD-07 | Phase 2 | Pending |
+| BLD-07 | Phase 2 | Complete |
 | BLD-08 | Phase 1 | Pending |
 | HOME-01 | Phase 3 | Pending |
 | HOME-02 | Phase 3 | Pending |
@@ -132,7 +132,7 @@
 | CONT-05 | Phase 5 | Pending |
 | CONT-06 | Phase 5 | Pending |
 | XCT-01 | Phase 6 | Pending |
-| XCT-02 | Phase 2 | Pending |
+| XCT-02 | Phase 2 | Complete |
 | XCT-03 | Phase 6 | Pending |
 | XCT-04 | Phase 6 | Pending |
 | XCT-05 | Phase 6 | Pending |
