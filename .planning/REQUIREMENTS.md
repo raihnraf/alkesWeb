@@ -53,7 +53,7 @@
 - [x] **CONT-03**: Email address (info@apbagroup.com) displayed as clickable link
 - [x] **CONT-04**: Phone number (0811 1212 9779) displayed as clickable link
 - [x] **CONT-05**: Office address (Jakarta, Indonesia)
-- [ ] **CONT-06**: Floating WhatsApp action button (fixed position, bottom-right, visible on all pages)
+- [x] **CONT-06**: Floating WhatsApp action button (fixed position, bottom-right, visible on all pages)
 
 ### Cross-Cutting
 
@@ -130,7 +130,7 @@
 | CONT-03 | Phase 5 | Complete |
 | CONT-04 | Phase 5 | Complete |
 | CONT-05 | Phase 5 | Complete |
-| CONT-06 | Phase 5 | Pending |
+| CONT-06 | Phase 5 | Complete |
 | XCT-01 | Phase 6 | Pending |
 | XCT-02 | Phase 2 | Complete |
 | XCT-03 | Phase 6 | Pending |
