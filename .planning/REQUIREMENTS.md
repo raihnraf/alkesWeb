@@ -57,9 +57,9 @@
 
 ### Cross-Cutting
 
-- [ ] **XCT-01**: Responsive design (mobile-first) for all pages
+- [x] **XCT-01**: Responsive design (mobile-first) for all pages
 - [x] **XCT-02**: Consistent page-to-page navigation experience
-- [ ] **XCT-03**: Page transition effects between routes
+- [x] **XCT-03**: Page transition effects between routes
 - [ ] **XCT-04**: SEO meta tags (title, description, Open Graph) on all pages
 - [ ] **XCT-05**: Image alt text for accessibility on all images
 
@@ -131,9 +131,9 @@
 | CONT-04 | Phase 5 | Complete |
 | CONT-05 | Phase 5 | Complete |
 | CONT-06 | Phase 5 | Complete |
-| XCT-01 | Phase 6 | Pending |
+| XCT-01 | Phase 6 | Complete |
 | XCT-02 | Phase 2 | Complete |
-| XCT-03 | Phase 6 | Pending |
+| XCT-03 | Phase 6 | Complete |
 | XCT-04 | Phase 6 | Pending |
 | XCT-05 | Phase 6 | Pending |
 
