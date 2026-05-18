@@ -48,7 +48,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. Current page is visually indicated (active state) in the navigation
   3. Mobile hamburger menu opens and closes with smooth animation and does not break page scroll
   4. Footer displays contact info, product links, and legal links on all pages
-**Plans**: TBD
+**Plans**: 3 plans
+
+**Plan List:**
+- [ ] [02-01-PLAN.md](.planning/phases/02-shared-layout-navigation/02-01-PLAN.md) — Build shared header/navigation with skip link, desktop nav, mobile hamburger menu, and nav.js
+- [ ] [02-02-PLAN.md](.planning/phases/02-shared-layout-navigation/02-02-PLAN.md) — Build shared footer with 4-column grid and inject into all 7 pages
+- [ ] [02-03-PLAN.md](.planning/phases/02-shared-layout-navigation/02-03-PLAN.md) — Create automated tests for navigation behavior and accessibility compliance
 
 ### Phase 3: Home Page
 **Goal**: Visitors arriving at the home page immediately understand APBA Group's value proposition and can navigate to any product or section
