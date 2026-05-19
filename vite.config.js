@@ -20,12 +20,12 @@ export default defineConfig({
     rollupOptions: {
       input: {
         index: resolve(__dirname, 'index.html'),
-        'blue-diode-laser': resolve(__dirname, 'src/products/blue-diode-laser.html'),
-        'ultrasonic-surgery': resolve(__dirname, 'src/products/ultrasonic-surgery.html'),
-        'holmium-laser': resolve(__dirname, 'src/products/holmium-laser.html'),
-        consumables: resolve(__dirname, 'src/products/consumables.html'),
-        about: resolve(__dirname, 'src/about.html'),
-        contact: resolve(__dirname, 'src/contact.html'),
+        'blue-diode-laser': resolve(__dirname, 'products/blue-diode-laser.html'),
+        'ultrasonic-surgery': resolve(__dirname, 'products/ultrasonic-surgery.html'),
+        'holmium-laser': resolve(__dirname, 'products/holmium-laser.html'),
+        consumables: resolve(__dirname, 'products/consumables.html'),
+        about: resolve(__dirname, 'about.html'),
+        contact: resolve(__dirname, 'contact.html'),
       },
     },
   },

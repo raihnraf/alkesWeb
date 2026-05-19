@@ -26,28 +26,47 @@
   <a href="#main-content" class="skip-link">Langsung ke konten utama</a>
 
   <!-- Header -->
-  <header class="fixed top-0 w-full z-50 h-20 bg-surface/90 backdrop-blur-md border-b border-border-light shadow-sm">
+  <header class="fixed top-0 w-full z-50 h-20 bg-surface/95 backdrop-blur-lg border-b border-border-light/50">
     <nav class="max-w-[--spacing-container-max] mx-auto px-[--spacing-margin-mobile] md:px-[--spacing-margin-desktop] flex justify-between items-center h-full">
-      <a href="/" class="font-headline-md font-bold text-deep-blue hover:text-medical-teal transition-colors">APBA Group</a>
-      <div class="hidden md:flex items-center gap-[--spacing-gutter]">
+      <!-- Logo with icon -->
+      <a href="/" class="logo-container group">
+        <div class="logo-icon group-hover:scale-110 transition-transform duration-300">
+          <span class="material-symbols-outlined text-[20px]">local_hospital</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-headline-md font-bold text-deep-blue leading-tight group-hover:text-medical-teal transition-colors">APBA Group</span>
+          <span class="font-caption text-on-surface-variant/60 text-[10px] -mt-0.5">Medical Solutions</span>
+        </div>
+      </a>
+
+      <!-- Desktop nav links -->
+      <div class="hidden md:flex items-center gap-10">
         <a href="/" class="nav-link font-label-md text-on-surface hover:text-medical-teal transition-colors duration-200 py-2">Beranda</a>
-        <a href="/products/blue-diode-laser" class="nav-link font-label-md text-on-surface hover:text-medical-teal transition-colors duration-200 py-2">Produk</a>
-        <a href="/about" class="nav-link font-label-md text-on-surface hover:text-medical-teal transition-colors duration-200 py-2">Tentang Kami</a>
-        <a href="/contact" class="nav-link font-label-md text-on-surface hover:text-medical-teal transition-colors duration-200 py-2">Kontak</a>
+        <a href="/products/blue-diode-laser.html" class="nav-link font-label-md text-on-surface hover:text-medical-teal transition-colors duration-200 py-2">Produk</a>
+        <a href="/about.html" class="nav-link font-label-md text-on-surface hover:text-medical-teal transition-colors duration-200 py-2">Tentang Kami</a>
+        <a href="/contact.html" class="nav-link font-label-md text-on-surface hover:text-medical-teal transition-colors duration-200 py-2">Kontak</a>
       </div>
-      <a href="/contact" class="hidden md:inline-flex font-label-md bg-deep-blue text-white rounded-full px-6 py-2.5 hover:bg-medical-teal transition-colors duration-200">Minta Penawaran</a>
+
+      <!-- CTA button (desktop only) -->
+      <a href="/contact.html" class="hidden md:inline-flex cta-button font-label-md text-white rounded-full px-6 py-2.5 transition-all duration-300 shadow-md hover:shadow-lg">
+        <span>Minta Penawaran</span>
+      </a>
+
+      <!-- Hamburger button (mobile only) -->
       <button id="hamburger-btn" class="md:hidden p-2 text-deep-blue hover:text-medical-teal focus-visible:ring-2 focus-visible:ring-medical-teal focus-visible:ring-offset-2 focus-visible:ring-offset-surface" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobile-menu">
         <span id="menu-icon" class="material-symbols-outlined text-[28px]">menu</span>
       </button>
     </nav>
+
+    <!-- Mobile menu container -->
     <div id="mobile-menu" class="md:hidden fixed top-[80px] left-0 w-full z-40 bg-surface border-b border-border-light shadow-lg" style="grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows 300ms ease-in-out, opacity 300ms ease-in-out;">
       <div class="overflow-hidden">
         <div class="flex flex-col">
           <a href="/" class="mobile-menu-item px-[--spacing-margin-mobile] py-[--spacing-stack-md] font-label-md text-on-surface hover:text-medical-teal border-b border-border-light min-h-[44px]">Beranda</a>
-          <a href="/products/blue-diode-laser" class="mobile-menu-item px-[--spacing-margin-mobile] py-[--spacing-stack-md] font-label-md text-on-surface hover:text-medical-teal border-b border-border-light min-h-[44px]">Produk</a>
-          <a href="/about" class="mobile-menu-item px-[--spacing-margin-mobile] py-[--spacing-stack-md] font-label-md text-on-surface hover:text-medical-teal border-b border-border-light min-h-[44px]">Tentang Kami</a>
-          <a href="/contact" class="mobile-menu-item px-[--spacing-margin-mobile] py-[--spacing-stack-md] font-label-md text-on-surface hover:text-medical-teal border-b border-border-light min-h-[44px]">Kontak</a>
-          <a href="/contact" class="mobile-menu-cta mx-[--spacing-margin-mobile] my-[--spacing-stack-md] block text-center bg-deep-blue text-white rounded-full px-6 py-3 font-label-md min-h-[44px]">Minta Penawaran</a>
+          <a href="/products/blue-diode-laser.html" class="mobile-menu-item px-[--spacing-margin-mobile] py-[--spacing-stack-md] font-label-md text-on-surface hover:text-medical-teal border-b border-border-light min-h-[44px]">Produk</a>
+          <a href="/about.html" class="mobile-menu-item px-[--spacing-margin-mobile] py-[--spacing-stack-md] font-label-md text-on-surface hover:text-medical-teal border-b border-border-light min-h-[44px]">Tentang Kami</a>
+          <a href="/contact.html" class="mobile-menu-item px-[--spacing-margin-mobile] py-[--spacing-stack-md] font-label-md text-on-surface hover:text-medical-teal border-b border-border-light min-h-[44px]">Kontak</a>
+          <a href="/contact.html" class="mobile-menu-cta mx-[--spacing-margin-mobile] my-[--spacing-stack-md] block text-center bg-deep-blue text-white rounded-full px-6 py-3 font-label-md min-h-[44px]">Minta Penawaran</a>
         </div>
       </div>
     </div>
@@ -73,9 +92,9 @@
           <!-- Product Image -->
           <div class="flex justify-center">
             <picture>
-              <source srcset="/public/images/modern_medical_corporate_office_interior_with_professional_healthcare_team.webp" type="image/webp">
+              <source srcset="/images/modern_medical_corporate_office_interior_with_professional_healthcare_team.webp" type="image/webp">
               <img
-                src="/public/images/modern_medical_corporate_office_interior_with_professional_healthcare_team.png"
+                src="/images/modern_medical_corporate_office_interior_with_professional_healthcare_team.png"
                 alt="Consumable Urologi APBA Group — perlengkapan medis urologi berkualitas tinggi"
                 class="max-w-[520px] w-full object-contain drop-shadow-[0px_8px_24px_rgba(0,0,0,0.3)]"
                 loading="eager"
@@ -106,41 +125,41 @@
 
         <!-- Spec Table -->
         <div class="bg-white rounded-xl border border-border-light overflow-hidden">
-          <table class="w-full">
+          <table class="spec-table w-full">
             <thead>
-              <tr class="bg-white border-b-2 border-medical-teal">
-                <th class="font-label-md text-deep-blue py-3 px-4 text-left">Kategori</th>
-                <th class="font-label-md text-deep-blue py-3 px-4 text-left">Detail</th>
+              <tr class="bg-surface-container-high border-b-2 border-medical-teal">
+                <th class="font-label-md text-deep-blue">Kategori</th>
+                <th class="font-label-md text-deep-blue">Detail</th>
               </tr>
             </thead>
             <tbody>
-              <tr class="bg-white border-b border-border-light hover:bg-medical-teal/5 transition-colors">
-                <td class="font-body-md text-on-surface-variant py-3 px-4">Stent Ureter</td>
-                <td class="font-body-md text-on-surface py-3 px-4">Polyurethane, Double-J, 6Fr–8Fr, panjang 22–28cm</td>
+              <tr class="border-b border-border-light">
+                <td class="font-body-md text-on-surface-variant">Stent Ureter</td>
+                <td class="font-body-md text-on-surface">Polyurethane, Double-J, 6Fr–8Fr, panjang 22–28cm</td>
               </tr>
-              <tr class="bg-surface-container-lowest border-b border-border-light hover:bg-medical-teal/5 transition-colors">
-                <td class="font-body-md text-on-surface-variant py-3 px-4">Guidewire</td>
-                <td class="font-body-md text-on-surface py-3 px-4">Nitinol/PTFE coated, 0.035", panjang 145–150cm</td>
+              <tr class="border-b border-border-light">
+                <td class="font-body-md text-on-surface-variant">Guidewire</td>
+                <td class="font-body-md text-on-surface">Nitinol/PTFE coated, 0.035", panjang 145–150cm</td>
               </tr>
-              <tr class="bg-white border-b border-border-light hover:bg-medical-teal/5 transition-colors">
-                <td class="font-body-md text-on-surface-variant py-3 px-4">Kateter Foley</td>
-                <td class="font-body-md text-on-surface py-3 px-4">Silicone/Latex, 2-way/3-way, 8Fr–24Fr</td>
+              <tr class="border-b border-border-light">
+                <td class="font-body-md text-on-surface-variant">Kateter Foley</td>
+                <td class="font-body-md text-on-surface">Silicone/Latex, 2-way/3-way, 8Fr–24Fr</td>
               </tr>
-              <tr class="bg-surface-container-lowest border-b border-border-light hover:bg-medical-teal/5 transition-colors">
-                <td class="font-body-md text-on-surface-variant py-3 px-4">Instrumen Disposable</td>
-                <td class="font-body-md text-on-surface py-3 px-4">Grasping forceps, stone basket, ureteral access sheath</td>
+              <tr class="border-b border-border-light">
+                <td class="font-body-md text-on-surface-variant">Instrumen Disposable</td>
+                <td class="font-body-md text-on-surface">Grasping forceps, stone basket, ureteral access sheath</td>
               </tr>
-              <tr class="bg-white border-b border-border-light hover:bg-medical-teal/5 transition-colors">
-                <td class="font-body-md text-on-surface-variant py-3 px-4">Metode Sterilisasi</td>
-                <td class="font-body-md text-on-surface py-3 px-4">Ethylene Oxide (EO), Gamma Radiation</td>
+              <tr class="border-b border-border-light">
+                <td class="font-body-md text-on-surface-variant">Metode Sterilisasi</td>
+                <td class="font-body-md text-on-surface">Ethylene Oxide (EO), Gamma Radiation</td>
               </tr>
-              <tr class="bg-surface-container-lowest border-b border-border-light hover:bg-medical-teal/5 transition-colors">
-                <td class="font-body-md text-on-surface-variant py-3 px-4">Kemasan</td>
-                <td class="font-body-md text-on-surface py-3 px-4">Individual blister pack, sterile, single-use</td>
+              <tr class="border-b border-border-light">
+                <td class="font-body-md text-on-surface-variant">Kemasan</td>
+                <td class="font-body-md text-on-surface">Individual blister pack, sterile, single-use</td>
               </tr>
-              <tr class="bg-white hover:bg-medical-teal/5 transition-colors">
-                <td class="font-body-md text-on-surface-variant py-3 px-4">Masa Simpan</td>
-                <td class="font-body-md text-on-surface py-3 px-4">3–5 tahun (tergantung produk)</td>
+              <tr>
+                <td class="font-body-md text-on-surface-variant">Masa Simpan</td>
+                <td class="font-body-md text-on-surface">3–5 tahun (tergantung produk)</td>
               </tr>
             </tbody>
           </table>
@@ -152,44 +171,55 @@
     <section class="bg-surface py-[--spacing-section-padding]">
       <div class="max-w-[--spacing-container-max] mx-auto px-[--spacing-margin-mobile] md:px-[--spacing-margin-desktop]">
         <!-- Section Heading with Accent Bar -->
-        <div class="mb-8">
+        <div class="mb-12">
           <div class="accent-bar mb-4"></div>
           <h2 class="font-headline-lg text-deep-blue">Aplikasi Klinis</h2>
+          <p class="font-body-md text-on-surface-variant mt-2 max-w-2xl">
+            Perlengkapan consumable urologi untuk berbagai kebutuhan prosedur harian.
+          </p>
         </div>
 
-        <!-- Card Grid: 1-col mobile, 2-col tablet, 3-col desktop (4 cards) -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[--spacing-gutter]">
+        <!-- Card Grid: 1-col mobile, 2-col tablet, 4-col desktop -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <!-- Card 1: Drainase Urinari -->
-          <div class="bg-white rounded-xl border border-border-light p-6 transition-all duration-300 hover:shadow-[0px_4px_20px_rgba(0,51,102,0.05)]">
-            <span class="material-symbols-outlined text-medical-teal text-[36px] mb-4" aria-hidden="true">flowchart</span>
-            <h3 class="font-headline-md text-deep-blue mb-2">Drainase Urinari</h3>
+          <div class="clinical-card">
+            <div class="icon-container">
+              <span class="material-symbols-outlined text-medical-teal text-[28px]" aria-hidden="true">flowchart</span>
+            </div>
+            <h3 class="font-headline-md text-deep-blue mb-3">Drainase Urinari</h3>
             <p class="font-body-md text-on-surface-variant">
               Stent ureter dan kateter untuk drainase urin pasca-operasi atau obstruksi saluran kemih.
             </p>
           </div>
 
           <!-- Card 2: Bantuan Passage Batu -->
-          <div class="bg-white rounded-xl border border-border-light p-6 transition-all duration-300 hover:shadow-[0px_4px_20px_rgba(0,51,102,0.05)]">
-            <span class="material-symbols-outlined text-medical-teal text-[36px] mb-4" aria-hidden="true">diamond</span>
-            <h3 class="font-headline-md text-deep-blue mb-2">Bantuan Passage Batu</h3>
+          <div class="clinical-card">
+            <div class="icon-container">
+              <span class="material-symbols-outlined text-medical-teal text-[28px]" aria-hidden="true">diamond</span>
+            </div>
+            <h3 class="font-headline-md text-deep-blue mb-3">Bantuan Passage Batu</h3>
             <p class="font-body-md text-on-surface-variant">
               Guidewire dan stone basket untuk pengambilan batu dari saluran kemih atas dan bawah.
             </p>
           </div>
 
           <!-- Card 3: Prosedur Diagnostik -->
-          <div class="bg-white rounded-xl border border-border-light p-6 transition-all duration-300 hover:shadow-[0px_4px_20px_rgba(0,51,102,0.05)]">
-            <span class="material-symbols-outlined text-medical-teal text-[36px] mb-4" aria-hidden="true">visibility</span>
-            <h3 class="font-headline-md text-deep-blue mb-2">Prosedur Diagnostik</h3>
+          <div class="clinical-card">
+            <div class="icon-container">
+              <span class="material-symbols-outlined text-medical-teal text-[28px]" aria-hidden="true">visibility</span>
+            </div>
+            <h3 class="font-headline-md text-deep-blue mb-3">Prosedur Diagnostik</h3>
             <p class="font-body-md text-on-surface-variant">
               Instrumen disposable untuk ureteroskopi dan prosedur diagnostik urologi.
             </p>
           </div>
 
           <!-- Card 4: Perawatan Pasca-Operatif -->
-          <div class="bg-white rounded-xl border border-border-light p-6 transition-all duration-300 hover:shadow-[0px_4px_20px_rgba(0,51,102,0.05)]">
-            <span class="material-symbols-outlined text-medical-teal text-[36px] mb-4" aria-hidden="true">monitor_heart</span>
-            <h3 class="font-headline-md text-deep-blue mb-2">Perawatan Pasca-Operatif</h3>
+          <div class="clinical-card">
+            <div class="icon-container">
+              <span class="material-symbols-outlined text-medical-teal text-[28px]" aria-hidden="true">monitor_heart</span>
+            </div>
+            <h3 class="font-headline-md text-deep-blue mb-3">Perawatan Pasca-Operatif</h3>
             <p class="font-body-md text-on-surface-variant">
               Kateter dan stent untuk pemulihan pasien pasca-prosedur urologi.
             </p>
@@ -198,35 +228,45 @@
       </div>
     </section>
 
-    <!-- Section 4: Inquiry CTAs (NO purchase/rental banner — consumables are purchase-only) -->
-    <section class="bg-surface-container-low py-[--spacing-section-padding]">
+    <!-- Section 4: CTA Banner (consumables - purchase only) -->
+    <section class="cta-banner py-[--spacing-section-padding]">
       <div class="max-w-[--spacing-container-max] mx-auto px-[--spacing-margin-mobile] md:px-[--spacing-margin-desktop]">
-        <!-- Section Heading with Accent Bar -->
-        <div class="mb-8">
-          <div class="accent-bar mb-4"></div>
-          <h2 class="font-headline-lg text-deep-blue">Hubungi Kami</h2>
-        </div>
+        <div class="flex flex-col lg:flex-row items-start lg:items-center gap-8">
+          <!-- Gold Icon Badge -->
+          <div class="icon-badge">
+            <span class="material-symbols-outlined text-alert-gold text-[28px]" aria-hidden="true">verified</span>
+          </div>
 
-        <div class="flex flex-col sm:flex-row gap-4">
-          <!-- WhatsApp Button -->
-          <a
-            href="https://wa.me/6281112129779?text=Halo%20APBA%20Group%2C%20saya%20tertarik%20dengan%20Consumable%20Urologi.%20Mohon%20informasi%20lebih%20lanjut."
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center justify-center gap-2 bg-medical-teal text-white px-8 py-3 rounded-full font-label-md min-h-[44px] hover:bg-deep-blue transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-medical-teal focus-visible:ring-offset-2"
-          >
-            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">chat</span>
-            Tanya via WhatsApp
-          </a>
+          <!-- Text Content -->
+          <div class="flex-1">
+            <h2 class="font-headline-lg text-white mb-3">Tersedia untuk Pembelian</h2>
+            <p class="font-body-lg text-surface-variant/90 max-w-xl">
+              Hubungi tim kami untuk konsultasi kebutuhan dan penawaran terbaik. Kami siap membantu Anda memilih solusi yang tepat.
+            </p>
+          </div>
 
-          <!-- Email Button -->
-          <a
-            href="mailto:info@apbagroup.com?subject=Inquiry%20Consumable%20Urologi&body=Halo%20APBA%20Group,%0A%0ASaya%20tertarik%20dengan%20Consumable%20Urologi.%20Mohon%20informasi%20lebih%20lanjut.%0A%0ANama:%20%0AInstitusi:%20%0A%0ATerima%20kasih."
-            class="inline-flex items-center justify-center gap-2 border-2 border-deep-blue text-deep-blue px-8 py-3 rounded-full font-label-md min-h-[44px] hover:bg-deep-blue hover:text-white transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-medical-teal focus-visible:ring-offset-2"
-          >
-            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">mail</span>
-            Kirim Email
-          </a>
+          <!-- Inline CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4 flex-shrink-0">
+            <!-- WhatsApp Button -->
+            <a
+              href="https://wa.me/6281112129779?text=Halo%20APBA%20Group%2C%20saya%20tertarik%20dengan%20Consumable%20Urologi.%20Mohon%20informasi%20lebih%20lanjut."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="cta-btn-primary"
+            >
+              <span class="material-symbols-outlined text-[20px]" aria-hidden="true">chat</span>
+              Tanya via WhatsApp
+            </a>
+
+            <!-- Email Button -->
+            <a
+              href="mailto:info@apbagroup.com?subject=Inquiry%20Consumable%20Urologi&body=Halo%20APBA%20Group,%0A%0ASaya%20tertarik%20dengan%20Consumable%20Urologi.%20Mohon%20informasi%20lebih%20lanjut.%0A%0ANama:%20%0AInstitusi:%20%0A%0ATerima%20kasih."
+              class="cta-btn-secondary"
+            >
+              <span class="material-symbols-outlined text-[20px]" aria-hidden="true">mail</span>
+              Kirim Email
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -235,67 +275,67 @@
     <section class="bg-surface-container-low py-[--spacing-section-padding]">
       <div class="max-w-[--spacing-container-max] mx-auto px-[--spacing-margin-mobile] md:px-[--spacing-margin-desktop]">
         <!-- Section Heading with Accent Bar -->
-        <div class="mb-8">
+        <div class="mb-12">
           <div class="accent-bar mb-4"></div>
           <h2 class="font-headline-lg text-deep-blue">Produk Lainnya</h2>
+          <p class="font-body-md text-on-surface-variant mt-2">
+            Jelajahi solusi urologi lainnya dari APBA Group.
+          </p>
         </div>
 
         <!-- Card Grid: 1-col mobile, 2-col tablet, 3-col desktop -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[--spacing-gutter]">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <!-- Related Product 1: Blue Diode Laser -->
-          <a href="/products/blue-diode-laser" class="bg-white rounded-xl border border-border-light overflow-hidden transition-all duration-300 hover:shadow-[0px_4px_20px_rgba(0,51,102,0.05)] hover:border-medical-teal group">
-            <div class="h-40 bg-background-subtle flex items-center justify-center p-4">
+          <a href="/products/blue-diode-laser.html" class="related-card">
+            <div class="image-container">
               <picture>
-                <source srcset="/public/images/blue_diode_laser_medical_device_for_urology_clean_white_background_professional.webp" type="image/webp">
+                <source srcset="/images/blue_diode_laser_medical_device_for_urology_clean_white_background_professional.webp" type="image/webp">
                 <img
-                  src="/public/images/blue_diode_laser_medical_device_for_urology_clean_white_background_professional.png"
+                  src="/images/blue_diode_laser_medical_device_for_urology_clean_white_background_professional.png"
                   alt="Blue Diode Laser APBA Group"
-                  class="h-full w-full object-contain"
                   loading="lazy"
                 >
               </picture>
             </div>
-            <div class="p-6 flex items-center justify-between">
-              <h3 class="font-headline-md text-deep-blue group-hover:text-medical-teal transition-colors">Blue Diode Laser</h3>
-              <span class="material-symbols-outlined text-medical-teal" aria-hidden="true">arrow_forward</span>
+            <div class="card-content">
+              <h3 class="font-headline-md">Blue Diode Laser</h3>
+              <span class="material-symbols-outlined arrow-icon" aria-hidden="true">arrow_forward</span>
             </div>
           </a>
 
           <!-- Related Product 2: Ultrasonic Surgery -->
-          <a href="/products/ultrasonic-surgery" class="bg-white rounded-xl border border-border-light overflow-hidden transition-all duration-300 hover:shadow-[0px_4px_20px_rgba(0,51,102,0.05)] hover:border-medical-teal group">
-            <div class="h-40 bg-background-subtle flex items-center justify-center p-4">
+          <a href="/products/ultrasonic-surgery.html" class="related-card">
+            <div class="image-container">
               <picture>
-                <source srcset="/public/images/ultrasonic_surgery_system_medical_equipment_professional_studio_photography.webp" type="image/webp">
+                <source srcset="/images/ultrasonic_surgery_system_medical_equipment_professional_studio_photography.webp" type="image/webp">
                 <img
-                  src="/public/images/ultrasonic_surgery_system_medical_equipment_professional_studio_photography.png"
+                  src="/images/ultrasonic_surgery_system_medical_equipment_professional_studio_photography.png"
                   alt="Sistem Ultrasonic Surgery untuk prosedur urologi"
-                  class="h-full w-full object-contain"
                   loading="lazy"
                 >
               </picture>
             </div>
-            <div class="p-6 flex items-center justify-between">
-              <h3 class="font-headline-md text-deep-blue group-hover:text-medical-teal transition-colors">Ultrasonic Surgery</h3>
-              <span class="material-symbols-outlined text-medical-teal" aria-hidden="true">arrow_forward</span>
+            <div class="card-content">
+              <h3 class="font-headline-md">Ultrasonic Surgery</h3>
+              <span class="material-symbols-outlined arrow-icon" aria-hidden="true">arrow_forward</span>
             </div>
           </a>
 
           <!-- Related Product 3: Laser Holmium -->
-          <a href="/products/holmium-laser" class="bg-white rounded-xl border border-border-light overflow-hidden transition-all duration-300 hover:shadow-[0px_4px_20px_rgba(0,51,102,0.05)] hover:border-medical-teal group">
-            <div class="h-40 bg-background-subtle flex items-center justify-center p-4">
+          <a href="/products/holmium-laser.html" class="related-card">
+            <div class="image-container">
               <picture>
-                <source srcset="/public/images/professional_high_end_medical_holmium_laser_machine_in_a_modern_clean_operating.webp" type="image/webp">
+                <source srcset="/images/professional_high_end_medical_holmium_laser_machine_in_a_modern_clean_operating.webp" type="image/webp">
                 <img
-                  src="/public/images/professional_high_end_medical_holmium_laser_machine_in_a_modern_clean_operating.png"
+                  src="/images/professional_high_end_medical_holmium_laser_machine_in_a_modern_clean_operating.png"
                   alt="Mesin Laser Holmium untuk prosedur urologi"
-                  class="h-full w-full object-contain"
                   loading="lazy"
                 >
               </picture>
             </div>
-            <div class="p-6 flex items-center justify-between">
-              <h3 class="font-headline-md text-deep-blue group-hover:text-medical-teal transition-colors">Laser Holmium</h3>
-              <span class="material-symbols-outlined text-medical-teal" aria-hidden="true">arrow_forward</span>
+            <div class="card-content">
+              <h3 class="font-headline-md">Laser Holmium</h3>
+              <span class="material-symbols-outlined arrow-icon" aria-hidden="true">arrow_forward</span>
             </div>
           </a>
         </div>
@@ -353,10 +393,10 @@
         <div>
           <h3 class="font-label-md font-semibold text-white uppercase tracking-wider mb-4">Produk</h3>
           <ul class="space-y-3">
-            <li><a href="/products/blue-diode-laser" class="font-body-md text-surface-variant/80 hover:text-white transition-all duration-200">Blue Diode Laser</a></li>
-            <li><a href="/products/ultrasonic-surgery" class="font-body-md text-surface-variant/80 hover:text-white transition-all duration-200">Ultrasonic Surgery</a></li>
-            <li><a href="/products/holmium-laser" class="font-body-md text-surface-variant/80 hover:text-white transition-all duration-200">Laser Holmium</a></li>
-            <li><a href="/products/consumables" class="font-body-md text-surface-variant/80 hover:text-white transition-all duration-200">Consumable Urologi</a></li>
+            <li><a href="/products/blue-diode-laser.html" class="font-body-md text-surface-variant/80 hover:text-white transition-all duration-200">Blue Diode Laser</a></li>
+            <li><a href="/products/ultrasonic-surgery.html" class="font-body-md text-surface-variant/80 hover:text-white transition-all duration-200">Ultrasonic Surgery</a></li>
+            <li><a href="/products/holmium-laser.html" class="font-body-md text-surface-variant/80 hover:text-white transition-all duration-200">Laser Holmium</a></li>
+            <li><a href="/products/consumables.html" class="font-body-md text-surface-variant/80 hover:text-white transition-all duration-200">Consumable Urologi</a></li>
           </ul>
         </div>
 

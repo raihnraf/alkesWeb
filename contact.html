@@ -26,28 +26,47 @@
   <a href="#main-content" class="skip-link">Langsung ke konten utama</a>
 
   <!-- Header -->
-  <header class="fixed top-0 w-full z-50 h-20 bg-surface/90 backdrop-blur-md border-b border-border-light shadow-sm">
+  <header class="fixed top-0 w-full z-50 h-20 bg-surface/95 backdrop-blur-lg border-b border-border-light/50">
     <nav class="max-w-[--spacing-container-max] mx-auto px-[--spacing-margin-mobile] md:px-[--spacing-margin-desktop] flex justify-between items-center h-full">
-      <a href="/" class="font-headline-md font-bold text-deep-blue hover:text-medical-teal transition-colors">APBA Group</a>
-      <div class="hidden md:flex items-center gap-[--spacing-gutter]">
+      <!-- Logo with icon -->
+      <a href="/" class="logo-container group">
+        <div class="logo-icon group-hover:scale-110 transition-transform duration-300">
+          <span class="material-symbols-outlined text-[20px]">local_hospital</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-headline-md font-bold text-deep-blue leading-tight group-hover:text-medical-teal transition-colors">APBA Group</span>
+          <span class="font-caption text-on-surface-variant/60 text-[10px] -mt-0.5">Medical Solutions</span>
+        </div>
+      </a>
+
+      <!-- Desktop nav links -->
+      <div class="hidden md:flex items-center gap-10">
         <a href="/" class="nav-link font-label-md text-on-surface hover:text-medical-teal transition-colors duration-200 py-2">Beranda</a>
-        <a href="/products/blue-diode-laser" class="nav-link font-label-md text-on-surface hover:text-medical-teal transition-colors duration-200 py-2">Produk</a>
-        <a href="/about" class="nav-link font-label-md text-on-surface hover:text-medical-teal transition-colors duration-200 py-2">Tentang Kami</a>
-        <a href="/contact" class="nav-link font-label-md text-on-surface hover:text-medical-teal transition-colors duration-200 py-2">Kontak</a>
+        <a href="/products/blue-diode-laser.html" class="nav-link font-label-md text-on-surface hover:text-medical-teal transition-colors duration-200 py-2">Produk</a>
+        <a href="/about.html" class="nav-link font-label-md text-on-surface hover:text-medical-teal transition-colors duration-200 py-2">Tentang Kami</a>
+        <a href="/contact.html" class="nav-link font-label-md text-on-surface hover:text-medical-teal transition-colors duration-200 py-2">Kontak</a>
       </div>
-      <a href="/contact" class="hidden md:inline-flex font-label-md bg-deep-blue text-white rounded-full px-6 py-2.5 hover:bg-medical-teal transition-colors duration-200">Minta Penawaran</a>
+
+      <!-- CTA button (desktop only) -->
+      <a href="/contact.html" class="hidden md:inline-flex cta-button font-label-md text-white rounded-full px-6 py-2.5 transition-all duration-300 shadow-md hover:shadow-lg">
+        <span>Minta Penawaran</span>
+      </a>
+
+      <!-- Hamburger button (mobile only) -->
       <button id="hamburger-btn" class="md:hidden p-2 text-deep-blue hover:text-medical-teal focus-visible:ring-2 focus-visible:ring-medical-teal focus-visible:ring-offset-2 focus-visible:ring-offset-surface" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobile-menu">
         <span id="menu-icon" class="material-symbols-outlined text-[28px]">menu</span>
       </button>
     </nav>
+
+    <!-- Mobile menu container -->
     <div id="mobile-menu" class="md:hidden fixed top-[80px] left-0 w-full z-40 bg-surface border-b border-border-light shadow-lg" style="grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows 300ms ease-in-out, opacity 300ms ease-in-out;">
       <div class="overflow-hidden">
         <div class="flex flex-col">
           <a href="/" class="mobile-menu-item px-[--spacing-margin-mobile] py-[--spacing-stack-md] font-label-md text-on-surface hover:text-medical-teal border-b border-border-light min-h-[44px]">Beranda</a>
-          <a href="/products/blue-diode-laser" class="mobile-menu-item px-[--spacing-margin-mobile] py-[--spacing-stack-md] font-label-md text-on-surface hover:text-medical-teal border-b border-border-light min-h-[44px]">Produk</a>
-          <a href="/about" class="mobile-menu-item px-[--spacing-margin-mobile] py-[--spacing-stack-md] font-label-md text-on-surface hover:text-medical-teal border-b border-border-light min-h-[44px]">Tentang Kami</a>
-          <a href="/contact" class="mobile-menu-item px-[--spacing-margin-mobile] py-[--spacing-stack-md] font-label-md text-on-surface hover:text-medical-teal border-b border-border-light min-h-[44px]">Kontak</a>
-          <a href="/contact" class="mobile-menu-cta mx-[--spacing-margin-mobile] my-[--spacing-stack-md] block text-center bg-deep-blue text-white rounded-full px-6 py-3 font-label-md min-h-[44px]">Minta Penawaran</a>
+          <a href="/products/blue-diode-laser.html" class="mobile-menu-item px-[--spacing-margin-mobile] py-[--spacing-stack-md] font-label-md text-on-surface hover:text-medical-teal border-b border-border-light min-h-[44px]">Produk</a>
+          <a href="/about.html" class="mobile-menu-item px-[--spacing-margin-mobile] py-[--spacing-stack-md] font-label-md text-on-surface hover:text-medical-teal border-b border-border-light min-h-[44px]">Tentang Kami</a>
+          <a href="/contact.html" class="mobile-menu-item px-[--spacing-margin-mobile] py-[--spacing-stack-md] font-label-md text-on-surface hover:text-medical-teal border-b border-border-light min-h-[44px]">Kontak</a>
+          <a href="/contact.html" class="mobile-menu-cta mx-[--spacing-margin-mobile] my-[--spacing-stack-md] block text-center bg-deep-blue text-white rounded-full px-6 py-3 font-label-md min-h-[44px]">Minta Penawaran</a>
         </div>
       </div>
     </div>
@@ -300,10 +319,10 @@
         <div>
           <h3 class="font-label-md font-semibold text-white uppercase tracking-wider mb-4">Produk</h3>
           <ul class="space-y-3">
-            <li><a href="/products/blue-diode-laser" class="font-body-md text-surface-variant/80 hover:text-white transition-all duration-200">Blue Diode Laser</a></li>
-            <li><a href="/products/ultrasonic-surgery" class="font-body-md text-surface-variant/80 hover:text-white transition-all duration-200">Ultrasonic Surgery</a></li>
-            <li><a href="/products/holmium-laser" class="font-body-md text-surface-variant/80 hover:text-white transition-all duration-200">Laser Holmium</a></li>
-            <li><a href="/products/consumables" class="font-body-md text-surface-variant/80 hover:text-white transition-all duration-200">Consumable Urologi</a></li>
+            <li><a href="/products/blue-diode-laser.html" class="font-body-md text-surface-variant/80 hover:text-white transition-all duration-200">Blue Diode Laser</a></li>
+            <li><a href="/products/ultrasonic-surgery.html" class="font-body-md text-surface-variant/80 hover:text-white transition-all duration-200">Ultrasonic Surgery</a></li>
+            <li><a href="/products/holmium-laser.html" class="font-body-md text-surface-variant/80 hover:text-white transition-all duration-200">Laser Holmium</a></li>
+            <li><a href="/products/consumables.html" class="font-body-md text-surface-variant/80 hover:text-white transition-all duration-200">Consumable Urologi</a></li>
           </ul>
         </div>
 

@@ -75,4 +75,27 @@ document.addEventListener('DOMContentLoaded', () => {
   if (statsSection) {
     observer.observe(statsSection)
   }
+
+  // Scroll-triggered fade-in animations
+  if (!prefersReducedMotion) {
+    const animatedElements = document.querySelectorAll('.animate-on-scroll')
+    const fadeObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible')
+            fadeObserver.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    )
+
+    animatedElements.forEach((el) => fadeObserver.observe(el))
+  } else {
+    // Show all animated elements immediately if reduced motion is preferred
+    document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+      el.classList.add('visible')
+    })
+  }
 })

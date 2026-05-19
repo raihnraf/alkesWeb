@@ -69,20 +69,21 @@ npm run test:run # Single run
 
 ```
 alkesweb/
+├── index.html                             # Landing page (Home)
+├── about.html                             # Company info, history, certifications
+├── contact.html                           # Inquiry form + company details
+├── products/
+│   ├── blue-diode-laser.html              # Product detail page
+│   ├── ultrasonic-surgery.html            # Product detail page
+│   ├── holmium-laser.html                 # Product detail page
+│   └── consumables.html                   # Product detail page
 ├── src/
-│   ├── home.html                          # Landing page
-│   ├── about.html                         # Company info, team, certifications
-│   ├── contact.html                       # Inquiry form + company details
 │   ├── css/
-│   │   └── main.css                       # Global styles, Tailwind imports
+│   │   └── main.css                       # Global styles, Tailwind v4 theme
 │   ├── js/
-│   │   └── main.js                        # Shared JavaScript (theme toggle, nav, etc.)
-│   ├── partials/                          # Reusable HTML snippets
-│   └── products/
-│       ├── blue-diode-laser.html          # Product detail page
-│       ├── ultrasonic-surgery.html        # Product detail page
-│       ├── holmium-laser.html             # Product detail page
-│       └── consumables.html               # Product detail page
+│   │   ├── nav.js                         # Navigation, mobile menu, scroll effects
+│   │   └── home.js                        # Home page animations, counters
+│   └── partials/                          # Reusable HTML snippets
 ├── public/
 │   └── images/                            # Local product images (PNG + auto-generated WebP)
 ├── tests/                                 # Vitest test files

@@ -2,6 +2,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.getElementById('hamburger-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   const menuIcon = document.getElementById('menu-icon');
+  const header = document.querySelector('header');
+
+  // Header scroll effect
+  if (header) {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Run on load
+  }
 
   // Hamburger toggle
   if (hamburger && mobileMenu) {
@@ -60,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Product pages: activate "Produk" link when on any /products/* page
     if (
       currentPath.startsWith('/products/') &&
-      linkHref === '/products/blue-diode-laser'
+      linkHref === '/products/blue-diode-laser.html'
     ) {
       link.classList.add('active');
     }
