@@ -82,6 +82,179 @@
   --font-caption: "Inter", sans-serif;
 }
 
+/* Material Symbols icon font */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Header styles */
+header {
+  transition: all 0.3s ease;
+}
+header.scrolled {
+  box-shadow: 0 4px 20px rgba(0, 30, 64, 0.08);
+}
+
+/* Logo with icon */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--color-medical-teal), var(--color-deep-blue));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: var(--font-headline-md);
+}
+
+/* Nav link with hover effect */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-medical-teal);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* CTA button with gradient */
+.cta-button {
+  background: linear-gradient(135deg, var(--color-deep-blue), var(--color-medical-teal));
+  position: relative;
+  overflow: hidden;
+}
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--color-medical-teal), var(--color-deep-blue));
+  transition: left 0.3s ease;
+  z-index: 0;
+}
+.cta-button:hover::before {
+  left: 0;
+}
+.cta-button span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero section improvements */
+.hero-section {
+  position: relative;
+}
+.hero-gradient {
+  background: linear-gradient(135deg, rgba(0, 30, 64, 0.95) 0%, rgba(0, 51, 102, 0.85) 50%, rgba(0, 163, 173, 0.3) 100%);
+}
+.hero-content {
+  position: relative;
+  z-index: 20;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: white;
+  margin-bottom: 24px;
+}
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.hero-subtitle {
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  line-height: 1.6;
+  opacity: 0.9;
+}
+.hero-button-primary {
+  background: linear-gradient(135deg, var(--color-medical-teal), #008a94);
+  box-shadow: 0 4px 15px rgba(0, 163, 173, 0.4);
+  transition: all 0.3s ease;
+}
+.hero-button-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 163, 173, 0.5);
+}
+.hero-button-secondary {
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+.hero-button-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+.hero-stats {
+  display: flex;
+  gap: 32px;
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.hero-stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-medical-teal);
+}
+.hero-stat-label {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Decorative elements */
+.hero-decoration {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 163, 173, 0.2) 0%, transparent 70%);
+  filter: blur(40px);
+  z-index: 1;
+}
+
 /* Skip link */
 .skip-link {
   @apply sr-only;
@@ -90,9 +263,12 @@
   @apply not-sr-only block bg-deep-blue text-white font-label-md px-6 py-3 text-center w-full absolute top-0 left-0 z-[60] transition-all duration-200;
 }
 
-/* Active nav link state */
+/* Active nav link state — uses ::after pseudo-element to avoid layout shift */
 .nav-link.active {
-  @apply text-medical-teal font-bold border-b-2 border-medical-teal pb-1;
+  @apply text-medical-teal font-bold;
+}
+.nav-link.active::after {
+  width: 100%;
 }
 
 /* Mobile menu open state */
@@ -145,7 +321,26 @@ html {
   border-radius: 9999px;
 }
 
-/* Product page — spec table responsive: stacked on mobile */
+/* Product page — spec table responsive */
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.spec-table th {
+  font-weight: 600;
+  padding: 12px 16px;
+  text-align: left;
+}
+.spec-table td {
+  padding: 12px 16px;
+}
+.spec-table tbody tr:nth-child(even) {
+  background-color: var(--color-surface-container-lowest);
+}
+.spec-table tbody tr:hover {
+  background-color: rgba(0, 163, 173, 0.05);
+}
+
 @media (max-width: 767px) {
   .spec-table thead {
     display: none;
@@ -154,11 +349,15 @@ html {
     display: flex;
     flex-direction: column;
     padding: 12px 16px;
+    border-bottom: 1px solid var(--color-border-light);
   }
   .spec-table tbody td:first-child {
     font-weight: 600;
     color: var(--color-deep-blue);
     padding-bottom: 4px;
+  }
+  .spec-table tbody td:last-child {
+    padding-top: 0;
   }
 }
 
@@ -196,6 +395,507 @@ html {
 
 @media (prefers-reduced-motion: reduce) {
   .form-success { animation: none; }
+}
+
+/* Product page — clinical application cards */
+.clinical-card {
+  background-color: white;
+  border-radius: 12px;
+  border: 1px solid var(--color-border-light);
+  padding: 24px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.clinical-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-medical-teal), var(--color-deep-blue));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.clinical-card:hover::before {
+  transform: scaleX(1);
+}
+.clinical-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 51, 102, 0.08);
+  transform: translateY(-4px);
+}
+.clinical-card .icon-container {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(0, 163, 173, 0.1), rgba(0, 51, 102, 0.05));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+}
+.clinical-card:hover .icon-container {
+  background: linear-gradient(135deg, var(--color-medical-teal), var(--color-deep-blue));
+}
+.clinical-card:hover .icon-container .material-symbols-outlined {
+  color: white;
+}
+
+/* Product page — CTA section (light background, card style) */
+.cta-section-bg {
+  background: linear-gradient(180deg, #f0f3ff 0%, #f9f9ff 50%, #f0f3ff 100%);
+  position: relative;
+}
+.cta-card {
+  background: linear-gradient(135deg, var(--color-deep-blue) 0%, #004080 60%, var(--color-secondary) 100%);
+  border-radius: 20px;
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 51, 102, 0.15);
+}
+.cta-card::before {
+  content: '';
+  position: absolute;
+  top: -60%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 163, 173, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-card::after {
+  content: '';
+  position: absolute;
+  bottom: -40%;
+  left: -5%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 184, 0, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-card-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  position: relative;
+  z-index: 1;
+}
+@media (min-width: 1024px) {
+  .cta-card-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.cta-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex: 1;
+}
+.cta-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: rgba(255, 184, 0, 0.15);
+  border: 1px solid rgba(255, 184, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.cta-text h2 {
+  font-weight: 700;
+  color: white;
+  margin-bottom: 8px;
+}
+.cta-text p {
+  color: rgba(216, 227, 251, 0.9);
+  line-height: 1.6;
+}
+.cta-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-shrink: 0;
+}
+@media (min-width: 640px) {
+  .cta-actions {
+    flex-direction: row;
+  }
+}
+.cta-btn-whatsapp {
+  background: var(--color-medical-teal);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 9999px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  min-height: 48px;
+  white-space: nowrap;
+}
+.cta-btn-whatsapp:hover {
+  background: white;
+  color: var(--color-medical-teal);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.cta-btn-email {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 9999px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  min-height: 48px;
+  backdrop-filter: blur(10px);
+  white-space: nowrap;
+}
+.cta-btn-email:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Product page — related product cards */
+.related-card {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid var(--color-border-light);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: block;
+  text-decoration: none;
+}
+.related-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 51, 102, 0.08);
+  transform: translateY(-4px);
+  border-color: var(--color-medical-teal);
+}
+.related-card .image-container {
+  height: 180px;
+  background: var(--color-background-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.related-card .image-container img {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+.related-card:hover .image-container img {
+  transform: scale(1.05);
+}
+.related-card .card-content {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.related-card .card-content h3 {
+  font-weight: 600;
+  color: var(--color-deep-blue);
+  transition: color 0.3s ease;
+}
+.related-card:hover .card-content h3 {
+  color: var(--color-medical-teal);
+}
+.related-card .card-content .arrow-icon {
+  color: var(--color-medical-teal);
+  transition: transform 0.3s ease;
+}
+.related-card:hover .card-content .arrow-icon {
+  transform: translateX(4px);
+}
+
+/* Product page — hero background with gradient and pattern */
+.product-hero-bg {
+  background: linear-gradient(135deg, #001a3a 0%, #003366 35%, #004d80 65%, #005a8a 100%);
+  position: relative;
+  overflow: hidden;
+}
+.product-hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(0, 163, 173, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 163, 173, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(0, 51, 102, 0.2) 0%, transparent 60%);
+  pointer-events: none;
+}
+.product-hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Floating orbs for hero section */
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  opacity: 0.4;
+}
+.hero-orb-1 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0, 163, 173, 0.3) 0%, transparent 70%);
+  top: -10%;
+  right: 15%;
+  animation: float-slow 8s ease-in-out infinite;
+}
+.hero-orb-2 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(0, 163, 173, 0.2) 0%, transparent 70%);
+  bottom: 10%;
+  left: 5%;
+  animation: float-slow 10s ease-in-out infinite reverse;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-20px) scale(1.05); }
+}
+
+/* Product page — clinical section background */
+.clinical-section-bg {
+  background: linear-gradient(180deg, #f9f9ff 0%, #f0f3ff 100%);
+  position: relative;
+}
+.clinical-section-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-medical-teal), transparent);
+  opacity: 0.3;
+}
+
+/* Product page — clinical application cards v2 */
+.clinical-card-v2 {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid var(--color-border-light);
+  padding: 32px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.clinical-card-v2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-medical-teal), var(--color-deep-blue));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.clinical-card-v2:hover::before {
+  transform: scaleX(1);
+}
+.clinical-card-v2:hover {
+  box-shadow: 0 12px 40px rgba(0, 51, 102, 0.12);
+  transform: translateY(-8px);
+  border-color: var(--color-medical-teal)/30;
+}
+.clinical-icon-v2 {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(0, 163, 173, 0.08), rgba(0, 51, 102, 0.04));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+.clinical-icon-v2::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  transition: border-color 0.4s ease;
+}
+.clinical-card-v2:hover .clinical-icon-v2 {
+  background: linear-gradient(135deg, var(--color-medical-teal), var(--color-deep-blue));
+  transform: scale(1.1) rotate(-5deg);
+}
+.clinical-card-v2:hover .clinical-icon-v2::after {
+  border-color: var(--color-medical-teal)/20;
+}
+.clinical-card-v2:hover .clinical-icon-v2 .material-symbols-outlined {
+  color: white;
+}
+.clinical-card-divider {
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-border-light), transparent);
+  margin-top: 16px;
+}
+
+/* Product page — related products background */
+.related-products-bg {
+  background: linear-gradient(180deg, #f0f3ff 0%, #e7eeff 50%, #f0f3ff 100%);
+  position: relative;
+}
+
+/* Product page — related product cards v2 */
+.related-card-v2 {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid var(--color-border-light);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+  text-decoration: none;
+}
+.related-card-v2:hover {
+  box-shadow: 0 16px 48px rgba(0, 51, 102, 0.12);
+  transform: translateY(-8px);
+  border-color: var(--color-medical-teal);
+}
+.related-image-v2 {
+  height: 220px;
+  background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.related-image-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 120%, rgba(0, 163, 173, 0.08) 0%, transparent 60%);
+  transition: opacity 0.4s ease;
+}
+.related-card-v2:hover .related-image-bg {
+  opacity: 0;
+}
+.related-image-v2 img {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 1;
+}
+.related-card-v2:hover .related-image-v2 img {
+  transform: scale(1.08);
+}
+.related-content-v2 {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.related-content-v2 h3 {
+  font-weight: 600;
+  color: var(--color-deep-blue);
+  transition: color 0.3s ease;
+}
+.related-card-v2:hover .related-content-v2 h3 {
+  color: var(--color-medical-teal);
+}
+.related-arrow-v2 {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-surface-container-high);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-medical-teal);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+.related-card-v2:hover .related-arrow-v2 {
+  background: var(--color-medical-teal);
+  color: white;
+  transform: translateX(4px);
+}
+.related-arrow-v2 .material-symbols-outlined {
+  font-size: 20px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .clinical-card,
+  .clinical-card::before,
+  .clinical-card .icon-container,
+  .clinical-card-v2,
+  .clinical-card-v2::before,
+  .clinical-card-v2 .clinical-icon-v2,
+  .cta-btn-whatsapp,
+  .cta-btn-email,
+  .related-card,
+  .related-card .image-container img,
+  .related-card .card-content h3,
+  .related-card .card-content .arrow-icon,
+  .related-card-v2,
+  .related-card-v2 .related-image-v2 img,
+  .related-card-v2 .related-content-v2 h3,
+  .related-card-v2 .related-arrow-v2,
+  .hero-orb-1,
+  .hero-orb-2 {
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+  }
+  .clinical-card:hover,
+  .clinical-card-v2:hover {
+    transform: none;
+  }
+  .related-card:hover,
+  .related-card-v2:hover {
+    transform: none;
+  }
+  .related-card:hover .image-container img,
+  .related-card-v2:hover .related-image-v2 img {
+    transform: none;
+  }
+  .related-card:hover .card-content .arrow-icon,
+  .related-card-v2:hover .related-arrow-v2 {
+    transform: none;
+  }
+  .cta-btn-whatsapp,
+  .cta-btn-email {
+    transition: none !important;
+    transform: none !important;
+  }
 }
 
 /* Floating WhatsApp button */
